@@ -2,7 +2,7 @@
 Accelerated t-SNE for SIMPLE-NN
 
 ## 1. Installation
-First, please install anaconda: https://docs.anaconda.com/anaconda/install/index.html
+First, please install anaconda: https://docs.anaconda.com/anaconda/install/index.html  
 Then, clone this repository by
 ```
 (base) $ git clone git@github.com:Jaesun0912/SIMPLE_TSNE.git
