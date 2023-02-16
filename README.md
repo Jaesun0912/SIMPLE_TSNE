@@ -109,4 +109,29 @@ or
 ```
 (tsne) $ sbatch tsne_gpu.j
 ```
-if you want to use tsnecuda.
+if you want to use tsnecuda.  
+The log file `tsne.log` would be generated.
+
+### 4) Outputs
+You can see preprocessed data in `data/preprocess`  
+
+You can see t-SNE result in `data/{sklearn, opentsne, multicore, gpu}`  
+The file name indicates the element, pca/tsne parameters.  
+
+## 3. Caution
+Usually, using tsnecuda gives the fasted result.  
+However, when using tsnecuda, there might occur some problems.
+* For low perplexity and huge amount of data, gradient calculation fails. (gradient = NaN) (I observed this for perplexity = 50, # of data = 200 k)
+* For huge amount of data, kNN calculation fails for `faiss >= 1.7`.
+
+For first case, increasing perplexity might be helpful.  
+For second case, please check your faiss version by `$ conda list | grep faiss`  
+(If you install by `env.yaml`, this should not be problematic)  
+
+Also, using the same learning rate in both cpu-supported t-SNE (sklearn, ...) and tsnecuda might not result the same.  
+For reliable result, please change your learning rate in `input.yaml`  
+  
+Since tsnecuda takes short times, make your parameters grid finer would be helpful.
+  
+When using multicoreTSNE, the c++ code of the package write things in STDERR file.
+If you want to trace the printing of `verbose = True`, please check STDERR files. (other log will be written in `tsne.log`)
