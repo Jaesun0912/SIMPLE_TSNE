@@ -61,7 +61,7 @@ First, make `data` folder by
 (tsne) $ mkdir data
 ```
 The data points used for SIMPLE-NN (dataXXXX.pt) should be under `data` directory.  
-Code will automatically read every data*.pt files under `./data/{raw_data_path}` which can be set in `raw_data_path` in `input.yaml`  
+Code will automatically read every `data*.pt` files under `./data/{raw_data_path}` which can be set in `raw_data_path` in `input.yaml`  
 For example, if you set `raw_data_path` in `input.yaml` as 'raw_data', the directory should be look like
 ```
 - data/
