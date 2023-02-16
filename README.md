@@ -55,7 +55,7 @@ Note that for sklearn and opentsne, multi-thread is also used (but still, usuall
   
 For `*_name` keys, you can set name of files. (Usually do not need to be changed)  
 
-### Input and output
+### 2) Inputs
 First, make `data` folder by
 ```
 (tsne) $ mkdir data
@@ -89,3 +89,24 @@ or
 - utils/
 ...
 ```
+(Note that sub_dir_i can be any arbitrary names)  
+
+### 3) Running scripts
+You can simply preprocess data (make matrix from dataXXXX.pt and PCA it) with
+```
+(tsne) $ sbatch preprocess.j
+```
+Reading data can be accelerated by multi-cores.  
+The log file `data.log` and `pca.log` would be generated.  
+  
+Then you can conduct t-SNE analysis with
+```
+(tsne) $ sbatch tsne_cpu.j
+```
+if you want to use scikit-learn, openTSNE, multicoreTSNE  
+  
+or
+```
+(tsne) $ sbatch tsne_gpu.j
+```
+if you want to use tsnecuda.
