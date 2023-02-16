@@ -1,0 +1,33 @@
+element:
+  - 'Ti'
+  #- 'N'
+
+pca_parameters:
+  n_components:
+    - 20
+    #- 30
+
+tsne_parameters:
+  perplexity:
+    - 10
+    - 50
+    #- 500
+  n_iter:
+    - 1000
+  learning_rate:
+    #- 20
+    - 200
+
+#directory of raw data points
+raw_data_path: 'raw_data'
+
+#name of files
+matrix_name: 'mat.dat'
+label_name: 'struct_list.dat'
+pca_matrix_name: 'pca.dat'
+tsne_matrix_name: 'tsne.dat'
+plot_name: 'plot.png'
+
+is_plot: True
+
+tsne: 'multicore'  # one of 'gpu', 'multicore', 'opentsne', 'sklearn'
