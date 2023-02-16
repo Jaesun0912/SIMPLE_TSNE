@@ -24,7 +24,7 @@ Then, create conda environment with following script.
 Configuration required for running this code is in `input.yaml`  
 Please change `input.yaml` based on your purpose.  
 
-Meaning of {key: value} is...
+Meaning of {key: value} is...  
 `pca_parameter`: name, value(s) of parameter used in PCA. (https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)  
 `tsne_parameter`: name, value(s) of parameter used in t-SNE. (https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)  
 * Warning: Some parameters available in sklearn are deprecated in multicore, tsnecuda.  
@@ -61,7 +61,7 @@ First, make `data` folder by
 (tsne) $ mkdir data
 ```
 The data points used for SIMPLE-NN (dataXXXX.pt) should be under `data` directory.  
-Code will automatically read every data*.pt files under `./data/{raw_data_path}` which can be set in `raw_data_path` in `input.yaml`
+Code will automatically read every data*.pt files under `./data/{raw_data_path}` which can be set in `raw_data_path` in `input.yaml`  
 For example, if you set `raw_data_path` in `input.yaml` as 'raw_data', the directory should be look like
 ```
 - data/
