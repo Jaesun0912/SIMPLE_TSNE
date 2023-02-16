@@ -2,4 +2,4 @@
 Accelerated t-SNE for SIMPLE-NN
 
 1. Installation
-================
+---------------
