@@ -25,10 +25,10 @@ Configuration required for running this code is in `input.yaml`
 Please change `input.yaml` based on your purpose.  
 
 Meaning of {key: value} is...  
+`element`: name of element.  
 `pca_parameter`: name, value(s) of parameter used in PCA. (https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)  
 `tsne_parameter`: name, value(s) of parameter used in t-SNE. (https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)  
 * Warning: Some parameters available in sklearn are deprecated in multicore, tsnecuda.  
-`element`: name of element.
 
 The script conducts kind of 'grid search' for given above parameters.  
 For example,  
